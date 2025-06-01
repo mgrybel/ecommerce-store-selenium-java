@@ -4,8 +4,6 @@ import com.ecommerce.selenium.base.BaseTest;
 import com.ecommerce.selenium.pages.LoginPage;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
-
 import static org.testng.Assert.assertEquals;
 
 public class LoginTest extends BaseTest {
