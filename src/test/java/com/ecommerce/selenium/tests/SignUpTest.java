@@ -33,4 +33,20 @@ public class SignUpTest extends BaseTest {
                 "The positive sign up notification displayed"
         );
     }
+
+    @Test(description = "Sing up with already taken email")
+    void singUpWithAlreadyTakenEmail() {
+        //Exercise
+        SignUpPage.getInstance().getUrl(driver);
+        SignUpPage.getInstance().signUp(driver, TestDataFactory.takenEmail, TestDataFactory.password);
+        SignUpPage.getInstance().getUrl(driver);
+        SignUpPage.getInstance().signUp(driver, TestDataFactory.takenEmail, TestDataFactory.password);
+
+        //Verify
+        Assert.assertTrue(
+                SignUpPage.getInstance().ifEmailIsTakenNotification(driver),
+                "The email is not already taken"
+        );
+
+    }
 }
