@@ -13,6 +13,7 @@ public class SignUpPage extends BasePage {
     private final By passwordInput = By.id("password");
     private final By signUpButton = By.cssSelector("button[type='submit']");
     private final By positiveSignInNotification = By.id("1");
+    private final By emailAlreadyTakenNotification = By.id("email-helper-text");
 
     // Private constructor - Singleton Design Pattern
     private SignUpPage() {super();}
@@ -55,4 +56,7 @@ public class SignUpPage extends BasePage {
         }
     }
 
+    public boolean ifEmailTaken(WebDriver driver) {
+        return findElementBy(driver, emailAlreadyTakenNotification).isDisplayed();
+    }
 }
