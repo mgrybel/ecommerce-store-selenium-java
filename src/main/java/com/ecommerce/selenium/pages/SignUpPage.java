@@ -56,7 +56,7 @@ public class SignUpPage extends BasePage {
         }
     }
 
-    public boolean ifEmailIsTakenNotification(WebDriver driver) {
+    public boolean ifEmailTaken(WebDriver driver) {
         return findElementBy(driver, emailAlreadyTakenNotification).isDisplayed();
     }
 }
